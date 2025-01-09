@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: paymentuser
+    url: jdbc:mysql://127.0.0.1:3306/payment?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    password: password
+  sql:
+    init:
+      mode: always
+  liquibase:
+    change-log: db/changelog/changelog-master.xml
+    user: paymentadmin
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
