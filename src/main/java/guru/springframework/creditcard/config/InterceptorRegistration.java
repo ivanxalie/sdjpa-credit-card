@@ -1,6 +1,7 @@
 package guru.springframework.creditcard.config;
 
 import guru.springframework.creditcard.interceptors.EncryptionInterceptor;
+import org.hibernate.cfg.AvailableSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,6 +17,6 @@ public class InterceptorRegistration implements HibernatePropertiesCustomizer {
 
     @Override
     public void customize(Map<String, Object> hibernateProperties) {
-        hibernateProperties.put("hibernate.session_factory.interceptor", encryptionInterceptor);
+        hibernateProperties.put(AvailableSettings.INTERCEPTOR, encryptionInterceptor);
     }
 }
